@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+management:
+  security:
+    enabled: false
+
+spring:
+  application:
+    name: zxzx
+
+eureka:
+  instance:
+    hostname: localhost
+    lease-expiration-duration-in-seconds: 90
+    lease-renewal-interval-in-seconds: 30
+  client:
+    service-url:
+      defaultZone: http://server1:1111/eureka/,http://server2:1112/eureka/,http://server3:1113/eureka/
+
+
+
+
+

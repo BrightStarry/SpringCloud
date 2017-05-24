@@ -1,0 +1,18 @@
+#集群配置-节点1
+server:
+  port: 1113
+#management:
+#  security:
+#    enabled: false
+spring:
+  application:
+    name: eureka-server
+eureka:
+  instance:
+    hostname: server3
+  client:
+      service-url:
+        defaultZone: http://server1:1111/eureka/,http://server2:1112/eureka/
+
+
+

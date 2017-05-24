@@ -1,0 +1,19 @@
+#单节点的配置
+#server:
+#  port: 1111
+#management:
+#  security:
+#    enabled: false
+#eureka:
+#  instance:
+#    hostname: localhost
+#  client:
+#      fetch-registry: false
+#      register-with-eureka: false
+#      service-url:
+#        defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+
+
+
+

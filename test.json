@@ -1,0 +1,195 @@
+[
+  {
+    "timestamp": 1495280054893,
+    "info": {
+      "method": "GET",
+      "path": "/dump",
+      "headers": {
+        "request": {
+          "host": "localhost",
+          "connection": "keep-alive",
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 UBrowser/6.1.2107.204 Safari/537.36",
+          "accept-encoding": "gzip, deflate",
+          "accept-language": "zh-CN,zh;q=0.8"
+        },
+        "response": {
+          "X-Application-Context": "application:80",
+          "Content-Type": "application/vnd.spring-boot.actuator.v1+json;charset=UTF-8",
+          "Transfer-Encoding": "chunked",
+          "Date": "Sat, 20 May 2017 11:34:14 GMT",
+          "status": "200"
+        }
+      },
+      "timeTaken": "78"
+    }
+  },
+  {
+    "timestamp": 1495279006415,
+    "info": {
+      "method": "GET",
+      "path": "/metrics/mem.free",
+      "headers": {
+        "request": {
+          "host": "localhost",
+          "connection": "keep-alive",
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 UBrowser/6.1.2107.204 Safari/537.36",
+          "accept-encoding": "gzip, deflate",
+          "accept-language": "zh-CN,zh;q=0.8"
+        },
+        "response": {
+          "X-Application-Context": "application:80",
+          "Content-Disposition": "inline;filename=f.txt",
+          "Content-Type": "application/vnd.spring-boot.actuator.v1+json;charset=UTF-8",
+          "Transfer-Encoding": "chunked",
+          "Date": "Sat, 20 May 2017 11:16:46 GMT",
+          "status": "200"
+        }
+      },
+      "timeTaken": "24"
+    }
+  },
+  {
+    "timestamp": 1495278901891,
+    "info": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "headers": {
+        "request": {
+          "host": "localhost",
+          "connection": "keep-alive",
+          "pragma": "no-cache",
+          "cache-control": "no-cache",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 UBrowser/6.1.2107.204 Safari/537.36",
+          "accept": "*/*",
+          "referer": "http://localhost/metrics",
+          "accept-encoding": "gzip, deflate",
+          "accept-language": "zh-CN,zh;q=0.8"
+        },
+        "response": {
+          "X-Application-Context": "application:80",
+          "Last-Modified": "Sat, 22 Apr 2017 06:56:44 GMT",
+          "Accept-Ranges": "bytes",
+          "Content-Type": "application/octet-stream",
+          "Content-Length": "946",
+          "Date": "Sat, 20 May 2017 11:15:01 GMT",
+          "status": "200"
+        }
+      },
+      "timeTaken": "5"
+    }
+  },
+  {
+    "timestamp": 1495278901536,
+    "info": {
+      "method": "GET",
+      "path": "/metrics",
+      "headers": {
+        "request": {
+          "host": "localhost",
+          "connection": "keep-alive",
+          "cache-control": "max-age=0",
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 UBrowser/6.1.2107.204 Safari/537.36",
+          "accept-encoding": "gzip, deflate",
+          "accept-language": "zh-CN,zh;q=0.8"
+        },
+        "response": {
+          "X-Application-Context": "application:80",
+          "Content-Type": "application/vnd.spring-boot.actuator.v1+json;charset=UTF-8",
+          "Transfer-Encoding": "chunked",
+          "Date": "Sat, 20 May 2017 11:15:01 GMT",
+          "status": "200"
+        }
+      },
+      "timeTaken": "4"
+    }
+  },
+  {
+    "timestamp": 1495278762627,
+    "info": {
+      "method": "GET",
+      "path": "/metrics",
+      "headers": {
+        "request": {
+          "host": "localhost",
+          "connection": "keep-alive",
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 UBrowser/6.1.2107.204 Safari/537.36",
+          "accept-encoding": "gzip, deflate",
+          "accept-language": "zh-CN,zh;q=0.8"
+        },
+        "response": {
+          "X-Application-Context": "application:80",
+          "Content-Type": "application/vnd.spring-boot.actuator.v1+json;charset=UTF-8",
+          "Transfer-Encoding": "chunked",
+          "Date": "Sat, 20 May 2017 11:12:42 GMT",
+          "status": "200"
+        }
+      },
+      "timeTaken": "32"
+    }
+  },
+  {
+    "timestamp": 1495278537149,
+    "info": {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "headers": {
+        "request": {
+          "host": "localhost",
+          "connection": "keep-alive",
+          "pragma": "no-cache",
+          "cache-control": "no-cache",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 UBrowser/6.1.2107.204 Safari/537.36",
+          "accept": "*/*",
+          "referer": "http://localhost/info",
+          "accept-encoding": "gzip, deflate",
+          "accept-language": "zh-CN,zh;q=0.8"
+        },
+        "response": {
+          "X-Application-Context": "application:80",
+          "Last-Modified": "Sat, 22 Apr 2017 06:56:44 GMT",
+          "Accept-Ranges": "bytes",
+          "Content-Type": "application/octet-stream",
+          "Content-Length": "946",
+          "Date": "Sat, 20 May 2017 11:08:56 GMT",
+          "status": "200"
+        }
+      },
+      "timeTaken": "18"
+    }
+  },
+  {
+    "timestamp": 1495278536801,
+    "info": {
+      "method": "GET",
+      "path": "/info",
+      "headers": {
+        "request": {
+          "host": "localhost",
+          "connection": "keep-alive",
+          "cache-control": "max-age=0",
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 UBrowser/6.1.2107.204 Safari/537.36",
+          "accept-encoding": "gzip, deflate",
+          "accept-language": "zh-CN,zh;q=0.8"
+        },
+        "response": {
+          "X-Application-Context": "application:80",
+          "Content-Type": "application/vnd.spring-boot.actuator.v1+json;charset=UTF-8",
+          "Transfer-Encoding": "chunked",
+          "Date": "Sat, 20 May 2017 11:08:56 GMT",
+          "status": "200"
+        }
+      },
+      "timeTaken": "63"
+    }
+  }
+]
