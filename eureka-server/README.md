@@ -9,6 +9,8 @@ Spring Cloud Eureka 是服务治理框架。
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka-server</artifactId>
 		</dependency>
+		同时指定版本号
+		<spring-cloud.version>Dalston.RELEASE</spring-cloud.version>
 并且，如果使用Spring initializr构建项目，会自动多增加如下一段版本依赖
         
         <dependencyManagement>
