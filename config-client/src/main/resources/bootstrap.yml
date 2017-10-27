@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      label: master
+      uri: http://127.0.0.1:6666

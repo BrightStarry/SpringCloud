@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="actuator" />
         <module name="config" />
+        <module name="config-client" />
         <module name="config-repository" />
         <module name="config-server" />
         <module name="eureka-client" />
@@ -21,6 +22,7 @@
     <bytecodeTargetLevel>
       <module name="actuator" target="1.8" />
       <module name="config" target="1.8" />
+      <module name="config-client" target="1.8" />
       <module name="config-repository" target="1.8" />
       <module name="config-server" target="1.8" />
       <module name="eureka-client" target="1.8" />
