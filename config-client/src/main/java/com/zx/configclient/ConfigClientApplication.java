@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 public class ConfigClientApplication {
-	@Value("${test:data!}")
+	@Value("${test}")
 	private String data;
 
 	@RequestMapping("/")
