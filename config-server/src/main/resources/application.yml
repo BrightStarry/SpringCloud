@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/BrightStarry/SpringCloud.git
+          default-label: master
+          username:
+          password:
+          search-paths: /config-repository/src/main/resources
+server:
+  port: 6666

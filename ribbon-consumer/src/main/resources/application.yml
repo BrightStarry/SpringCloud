@@ -1,7 +1,13 @@
 server:
   port: 9000
+
 eureka:
   client:
     service-url:
       defaultZone: http://server1:1111/eureka/,http://server2:1112/eureka/,http://server3:1113/eureka/
+spring:
+  application:
+    name: cosumer1
+
+
 

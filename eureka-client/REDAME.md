@@ -39,3 +39,7 @@ http://server1:1111/eureka/,http://server2:1112/eureka/,http://server3:1113/eure
 ---
 ##### 如果需要保证该服务的高可用，服务提供者（也就是这个client项目自己）也需要启动多个实例。
 本机测试，可以和eureka-server一样，使用jar方式启动，然后配置启动参数 --server.port=8080 .让多个实例的端口不同就可以了。
+
+
+
+
