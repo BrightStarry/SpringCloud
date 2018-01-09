@@ -80,10 +80,23 @@
         public String testError(){
             return "error";
         }
-则如果请求某个服务时，当返回失败，则调用异常回调方法。
+则如果请求某个服务时，当返回失败，则调用异常回调方法  
+(!!在该回调方法中定义和调用方法相同的形参,可以获取到调用时的参数)
 
 #### 同步执行和异步执行  TODO
+* 同步调用接口-如上即可
+* 异步调用接口
+>
+    @HystrixCommand(fallbackMethod = "testError")
+    public Future<String> test() {
+        return new AsyncResult<String>{
+            return restTemplate.getForEntity("http://zxzx/hello",String.class).getBody();
+        };
+    }
+>
 
+#### 异常处理
+* 在容错回调中获取到异常.如上的testError()方法.只需在其参数中增加Throwable e即可.
 
 #### Spring Cloud Feign 声明式服务调用
 * feign会自动使用ribbon.无需注解@LoadBalanced
