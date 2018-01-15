@@ -6,3 +6,6 @@ spring:
       label: master
       uri: http://127.0.0.1:6666
       profile: default
+management:
+  security:
+    enabled: false

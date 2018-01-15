@@ -9,12 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 public class ConfigClientApplication {
-	@Value("${test}")
-	private String data;
+
 
 	@RequestMapping("/")
 	public String test(){
-		return data;
+		return "test";
 	}
 
 	public static void main(String[] args) {
