@@ -1,0 +1,22 @@
+server:
+  port: 10001
+spring:
+  application:
+    name: api-gateway
+zuul:
+  routes: # 这个routes是一个map.所以如下的key可以任意.
+    api-a-url: # 这是map的 key,string类型,如下是map的value,只一个对象,包含 id/path/serviceId/url属性
+      # 将path的**通配后缀和 url的路径相匹配, 例如,请求 api服务路径/api-a/hello,自动转发到127.0.0.1:8080/hello
+      path: /api-a/**
+      url: http://127.0.0.1:8080/
+    api-b-url:
+      # 将指定路由和指定服务 映射
+      path: /api-b/**
+      serviceId: client-zx
+
+# 将网关服务也注册到注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server1:1111/eureka/,http://server2:1112/eureka/,http://server3:1113/eureka/
+
