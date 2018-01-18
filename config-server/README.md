@@ -29,7 +29,7 @@
               #password: 
 >
 * 在对应个仓库根目录(可通过search-paths指定其他目录)新建config-client-default.yml文件
-* 启动服务端,访问 ip:port/config-client-default.yml即可
+* 启动服务端,访问 ip:port/config-client-default.yml即可,或者ip:port/config-client/default也可以.
 
 * 其属性文件和访问的url关系映射如下
 >   
