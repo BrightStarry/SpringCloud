@@ -144,7 +144,9 @@
 但这样做.可能导致过度耦合.修改controller参数时,必须修改对应声明式service.反之亦然.
 
 
-
+#### 服务跟踪 Sleuth 
+* 具体的服务跟踪可以看这篇文章: https://zhuanlan.zhihu.com/p/32960406
+* 每个请求,生成一个TraceId,以及多个SpanId(可理解为每调用一个其他服务,记录一个spanId)
 
 
 
