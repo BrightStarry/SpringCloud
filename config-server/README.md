@@ -130,5 +130,6 @@
       restart:
         enabled: true
 >
-* 或者,使用@RefreshScope注解,注解在类和方法上(应该是指@Bean直接的方法),重新注入bean
+* 或者,使用@RefreshScope注解,注解在类和方法上(应该是指@Bean直接的方法),表示重新注入这个bean(已测试,成功.)
 
+* 此外,可以使用Spring Cloud Bus 和 GitHook(当更新git时,它会自动推送消息到指定接口) 实现自动刷新.
