@@ -13,6 +13,21 @@
 #      service-url:
 #        defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 
+management:
+  security:
+    enabled: false
+eureka:
+  server:
+    enable-self-preservation: false # 关闭自我保护(开启后和节点间网络频繁故障,会进入保护模式,不再剔除节点)
+    eviction-interval-timer-in-ms: 10000 # 清除无效节点间隔
+spring:
+  application:
+    name: eureka-server
+  boot:
+    admin:
+      context-path: /admin
+
+
 
 
 

@@ -1,12 +1,6 @@
 #集群配置-节点1
 server:
   port: 1111
-#management:
-#  security:
-#    enabled: false
-spring:
-  application:
-    name: eureka-server
 eureka:
   instance:
     hostname: server1

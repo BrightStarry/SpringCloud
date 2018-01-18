@@ -1,0 +1,23 @@
+server:
+  port: 8555
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          # git地址
+          uri: https://github.com/BrightStarry/SpringCloud.git
+          # 仓库中路径
+          #search-paths:
+          # 帐号,如果是私有的
+          #username:
+          # 密码
+          #password:
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server1:1111/eureka/,http://server2:1112/eureka/,http://server3:1113/eureka/
+
+
