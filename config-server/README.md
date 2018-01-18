@@ -133,3 +133,14 @@
 * 或者,使用@RefreshScope注解,注解在类和方法上(应该是指@Bean直接的方法),表示重新注入这个bean(已测试,成功.)
 
 * 此外,可以使用Spring Cloud Bus 和 GitHook(当更新git时,它会自动推送消息到指定接口) 实现自动刷新.
+
+#### Spring Cloud Bus 消息总线
+* 让所有注册当服务注册中心的节点都监听消息队列的同一个主题,这样,就可以在所有节点间传递消息.称为消息总线
+
+* 在config-client端导入依赖
+>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
+		</dependency>
+>

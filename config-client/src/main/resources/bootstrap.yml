@@ -7,6 +7,37 @@ spring:
         enabled: true
         service-id: config-server
       profile: default
+  #rabbitmq
+  rabbitmq:
+    host: 106.14.7.29
+    port: 5672
+    #连接超时时间,毫秒,0表示无限
+    connection-timeout: 3000
+    #请求后的心跳超时时间,秒,0表示没有
+    requested-heartbeat: 5
+    # 启用生产者确认,开启后才能使用publisherConfirms
+    publisher-confirms: true
+    # 启用生产者返回(拒绝),开启后才能使用publisherReturns
+    publisher-returns: true
+    # 缓存
+    cache:
+      # 通道
+      channel:
+        # 如果缓存size满了,等待获取通道的时间,如果为0,总是创建新的通道
+        checkout-timeout: 3000
+        # 缓存中保存的通道个数,check-timeout > 0 时,
+        size: 10
+      # 连接
+      connection:
+        # 连接工厂缓存模式 CONNECTION:在每个连接中缓存connection和channel; Channel:缓存通道,单个连接
+        mode: connection
+        # 缓存的连接数,只有当mode为CONNECTION时才适用
+        size: 10
+
+#    virtual-host: #连接到rabbitmq的虚拟主机时配置
+#    addresses: #逗号分割的地址列表,用于集群地址
+#    username:
+#    password:
 eureka:
   client:
     service-url:
@@ -17,3 +48,4 @@ management:
 endpoints:
   restart:
     enabled: true
+
