@@ -66,7 +66,7 @@ eureka.instance.prefer-ip-address: true
 ---
 3. 使用Maven执行package。将项目打成jar。（idea本身的打成jar有bug，我试了很久）。
 然后项目中的target文件中就有了jar。
-然后在run中配置，对应的参数 --spring.profiles.active=server1 这样（当然，这是单个项目的测试做法），连续启动3个jar。就有了3个注册中心节点。
+然后在run中配置，对应的参数 --spring.profiles.active=server1 这样(激活不同的配置文件)（当然，这是单个项目的测试做法），连续启动3个jar。就有了3个注册中心节点。
 打开任意一个注册中心的管理界面，就会发现，其他两个节点已经被当作服务注册在上面了。
 这样子服务就会相互同步，实现高可用。
 

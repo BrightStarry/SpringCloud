@@ -110,6 +110,25 @@ spring.cloud.loadbalancer.retry.enabled 是否开启重试机制，默认为fals
 <client>.ribbon.MaxAutoRetriesNextServer 自动切换实例进行重试的最大次数
 <client>.ribbon.MaxAutoRetries 对同一个实例（当前实例）的重试次数
 ---
+---
+####问题记录
+如果访问服务中心，在Instances currently registered with Eureka（当前注册在eureka的实例）栏目下，点击某些实例，跳转到该实例的/info路径，
+显示错误页面，那么应该是该实例的actuator配置错误。
+如果许多节点都无法访问，返回401，主要是因为权限的配置不正确
+http://blog.csdn.net/u013076044/article/details/60780151
+yml中添加management:security:enabled=false
+详见actuator项目中的README.md
+---
+---
+####中途总结
+目前的项目以及其作用：
+* eureka-server:eureka服务注册中心，配置了3个实例，形成一个集群。每个实例中需要配置其他所有实例的路径，以及一个实例名。
+* eureka-client:eureka服务（客户端），将自身注册到服务注册中心(eureka-server)。供消费者调用.其中这个项目中写的TestController中的
+index()方法就是这个服务提供的服务。这个服务的名字就叫zxzx,并且有2个实例，所以client.getInstances("zxzx")返回的List的size为2，就是
+两个服务实例的一些信息。
+* ribbon-consumer:使用ribbon进行负载均衡地调用服务的消费者。使用RestTemplate类，访问服务中心对应服务的名字。如果服务有多个实例，就会
+自动的根据配置的策略负载均衡。
+
 
 
 

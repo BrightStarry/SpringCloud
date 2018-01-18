@@ -16,6 +16,14 @@ endpoints.info.path=/aaa 这样的参数，修改默认路径
 http://blog.csdn.net/u013076044/article/details/60780151
 yml中添加management:security:enabled=false
 ---
+!!!如下配置，则需要输入密码，注意，需要引入security依赖
+security:
+  user:
+    password: 970389
+    name: zx
+  basic:
+    path: ["/**"]
+---
 返回的json需要格式化，可以直接在idea中新建一个a.json，然后复制上去，按c+a+ L
 
 原生端点主要可分为：
