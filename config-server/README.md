@@ -117,3 +117,18 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>    
 >
+* 修改git上的配置文件内容,然后post请求对应客户端的/refresh接口即可.注意,需要关闭安全管理
+>
+    management:
+      security:
+        enabled: false
+>
+* 该刷新对于已经生成的bean不会进行更改,例如注入一个类的属性中的值,刷新后也不会变化.
+* 此时,可以考虑调用/restart接口重启服务,注意,需要增加如下配置启用重启接口
+>
+    endpoints:
+      restart:
+        enabled: true
+>
+* 或者,使用@RefreshScope注解,注解在类和方法上(应该是指@Bean直接的方法),重新注入bean
+
