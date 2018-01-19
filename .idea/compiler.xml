@@ -31,7 +31,7 @@
       <module name="rabbitmq-demo" target="1.8" />
       <module name="ribbon-comsumer" target="1.8" />
       <module name="ribbon-consumer" target="1.8" />
-      <module name="SpringCloud" target="1.5" />
+      <module name="SpringCloud" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
