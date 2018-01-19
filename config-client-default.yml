@@ -1,4 +1,4 @@
 server:
-  port: 9704
+  port: 9705
   context-path: /
 test: 111111111
