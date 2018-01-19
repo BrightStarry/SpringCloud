@@ -1,4 +1,21 @@
 # Spring Cloud
+* 每个项目中有各自的README.md,自行查看,此处随便记录了些东西而已.
+* 此外,根目录中的SpringBootDoc.md中,有阅读完SpringBoot整个官方文档的索引笔记.
+
+* 大致介绍下整个项目的结构
+    * actuator: actuator监控框架,简单介绍了下每个路由的功能
+    * api-gateway: spring cloud zuul框架,可理解为Nginx,负责转发/过滤/负载均衡/反向代理所有前端请求
+    * eureka-server: spring cloud eureka服务注册中心,最重要的服务,协调所有注册的服务和节点.  
+        此外,它整合了spring admin框架,非官方框架,但提供了比actuator更强大的监控功能.
+    * eureka-client: spring cloud eureka客户端,注册到服务注册中心的一个节点,此处仅作为一个服务提供者.
+    * ribbon-consumer: 服务消费者,使用ribbon负载均衡的通过服务注册中心调用服务提供者,  
+        还有Hystrix实现熔断保护,Feign 声明式服务调用等.
+    * config-server: Spring cloud config框架的服务端,负责连接到git,所有config-client从该服务端获取git上的分布式配置
+    * config-client: Spring cloud config框架的客户端,连接到config-server,  
+        已实现,push修改分布式配置文件,git自动推送到服务端,服务端通过spring cloud bus自动通知config-client,完成刷新
+
+
+
 ## Eureka 
 #### 阶段1 ： 开启服务中心集群(3个节点),注册一个服务（该服务有两个实例，就是两台机器提供该服务），一个消费者对该服务进行负载均衡的消费
 eureka-server：服务中心项目，通过jar的方式，修改运行参数，启动3个节点。
