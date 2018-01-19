@@ -136,11 +136,27 @@
 
 #### Spring Cloud Bus 消息总线
 * 让所有注册当服务注册中心的节点都监听消息队列的同一个主题,这样,就可以在所有节点间传递消息.称为消息总线
+* 具体实现有rabbitmq和kafka.关于rabbit-mq的实现,参考rabbit-mq项目
 
-* 在config-client端导入依赖
->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
-		</dependency>
->
+* 此处,在config-server和config-client间配置消息总线,以实现,让服务端通知任意客户端进行刷新的目的
+    * 依赖,config-server和config-client
+        >
+            <dependency>
+              <groupId>org.springframework.cloud</groupId>
+              <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+            </dependency>
+        >
+    * 在config-client和config-server中配置rabbitMQ对应属性
+        >
+            spring:
+                rabbitmq:
+                  host: 106.14.7.29
+                  port: 5672
+        >
+* 此时,服务端会多一个/bus/refresh路由.在关闭安全设置后,post访问该该端口,即可自动刷新所有客户端.
+    * 可通过在请求时携带参数,刷新指定服务节点: /bus/refresh?destination=xxx:9000
+    * 默认服务名是: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id}:${server:port}
+* 通过git的webHooks(类似于监听器,具体可参考Jenkins项目),实现全自动刷新
+    * 在git或github上配置,监听push事件,设置其回调地址为config-server的/bus/refresh即可.
+    * 配置时还可设置密钥,那么,就需要在服务端的配置文件中配置encrypt.key属性
+    * 此处懒得弄了.

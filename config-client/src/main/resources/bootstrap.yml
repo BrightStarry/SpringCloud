@@ -7,37 +7,84 @@ spring:
         enabled: true
         service-id: config-server
       profile: default
-  #rabbitmq
   rabbitmq:
     host: 106.14.7.29
     port: 5672
-    #���ӳ�ʱʱ��,����,0��ʾ����
+    # 默认创建一个AmqpAdmin的Bean
+    dynamic:
+    #连接超时时间,毫秒,0表示无限
     connection-timeout: 3000
-    #������������ʱʱ��,��,0��ʾû��
+    #请求后的心跳超时时间,秒,0表示没有
     requested-heartbeat: 5
-    # ����������ȷ��,���������ʹ��publisherConfirms
+    # 启用生产者确认,开启后才能使用publisherConfirms
     publisher-confirms: true
-    # ���������߷���(�ܾ�),���������ʹ��publisherReturns
+    # 启用生产者返回(拒绝),开启后才能使用publisherReturns
     publisher-returns: true
-    # ����
+    # 缓存
     cache:
-      # ͨ��
+      # 通道
       channel:
-        # �������size����,�ȴ���ȡͨ����ʱ��,���Ϊ0,���Ǵ����µ�ͨ��
+        # 如果缓存size满了,获取通道等待的时间,如果为0,总是创建新的通道
         checkout-timeout: 3000
-        # �����б����ͨ������,check-timeout > 0 ʱ,
+        # 缓存中保存的通道个数,check-timeout > 0 时,
         size: 10
-      # ����
+      # 连接
       connection:
-        # ���ӹ�������ģʽ CONNECTION:��ÿ�������л���connection��channel; Channel:����ͨ��,��������
+        # 连接工厂缓存模式 CONNECTION:在每个连接中缓存connection和channel; Channel:缓存通道,单个连接
         mode: connection
-        # �����������,ֻ�е�modeΪCONNECTIONʱ������
+        # 缓存的连接数,只有当mode为CONNECTION时才适用
         size: 10
-
-#    virtual-host: #���ӵ�rabbitmq����������ʱ����
-#    addresses: #���ŷָ�ĵ�ַ�б�,���ڼ�Ⱥ��ַ
+    # 监听器
+    listener:
+      simple:
+        # 容器的确认模式 NONE:不开启; MANUAL:手动; AUTO:自动(通过是否抛出异常来判定)
+        acknowledge-mode: auto
+        # 启动时自动启动容器
+        auto-startup: true
+        # 最小消费者数,每个监听器类的,当并发过大时,会自动增长消费者数
+        concurrency: 1
+        # 最大消费者数
+        max-concurrency: 10
+        # 消费失败后是否重新排队
+        default-requeue-rejected: true
+        # 单个请求处理的消息个数, 它 >= 事务数量(如果使用事务)
+        prefetch: 2
+        # 一个事务中处理的消息数量,最好应该 <= prefetch
+        transaction-size: 2
+        # 容器每空闲毫秒,触发一次该事件
+        idle-event-interval:
+        # 重试机制
+        retry:
+          # 是否启用重试
+          enabled: true
+          # 第一次和第二次 尝试发布或交付(此处是消费者交付,template.retry中是消费者发布)的 间隔时间
+          initial-interval: 1000
+          # 两次重试的最大间隔
+          max-interval: 10000
+          # 尝试发布或交付的 最大次数(重试次数)
+          max-attempts: 3
+          # 每次重试都比上一次重试间隔时长大x倍
+          multiplier: 1.0
+          # 重试是无状态还是有状态的
+          stateless: true
+    # 发送模版类
+    template:
+      # 启用强制消息接收(如果消息未到达,会返回到对应监听器)
+      mandatory: true
+      # receive()方法超时时间
+      receive-timeout: 10000
+      #  sendAndReceive()方法超时时间
+      reply-timeout: 5000
+      # 重试机制(具体参数和listener的重试机制雷同)
+      retry:
+        enabled: true
+    # ssl证书相关
+#    ssl:
+#    virtual-host: #连接到rabbitmq的虚拟主机时配置
+#    addresses: #逗号分割的地址列表,用于集群地址
 #    username:
 #    password:
+
 eureka:
   client:
     service-url:
